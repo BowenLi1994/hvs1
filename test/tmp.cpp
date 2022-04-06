@@ -92,7 +92,7 @@ void sift_test1B(
 	int level_,// level number
 	int qsize, // number of query
 	float delta_, // delta of each level
-	int efsearch){
+	int efsearch){ //search or not flag
         
         int efConstruction = 500;
 	    int M = 16;
@@ -116,7 +116,7 @@ void sift_test1B(
 	    int remainder = vecdim % max_num; //10
 	    int ratio = vecdim / max_num;// 10/16=0
 	    if(remainder == 0){dim_ = vecdim;}
-        else{ dim_ = (ratio + 1)* max_num; }	//dim_ the upperbound of vecdim/16 without reminder=16
+        else{ dim_ = (ratio + 1)* max_num; }	//dim_ the upperbound of vecdim/16 without reminder, dim_=16
 		
         float *massb = new float[vecdim];
 	    float *mass = new float[vecdim];
@@ -215,7 +215,7 @@ void sift_test1B(
 		}
 
 		//min_book=4	
-		int max_dim = dim_ / min_book;
+		int max_dim = dim_ / min_book; //max_dim=4
 
 		//quantizer0[max_dim][16][min_book]
 		float*** quantizer0 = new float** [min_book];  //for checking start book
@@ -314,8 +314,7 @@ void sift_test1B(
 
 
 
-	//----------build base layer------------------------------------
-	
+	//----------build base layer------------------------------------=	
 	//link_[max_level+1][vecsize]
 	int** link_ = new int* [max_level_+1];
     for(int i = 0; i < max_level_+1; i++){	

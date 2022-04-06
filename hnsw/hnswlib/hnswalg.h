@@ -175,7 +175,9 @@ namespace hnswlib {
             free(linkLists_);
             delete visited_list_pool_;
         }
-        //member variable
+        
+        
+        /*--------------------------------------------member variable-----------------------------------------*/
         size_t max_elements_;
         size_t cur_element_count;
         size_t size_data_per_element_;
@@ -192,7 +194,6 @@ namespace hnswlib {
         double mult_, revSize_;
         int maxlevel_;
 
-		//--------------------------------------------
 		int* length;
 		int vecdim;
 		size_t*	quan_size_;
@@ -201,7 +202,6 @@ namespace hnswlib {
 		char**	quan_level0_memory_;
         int* count_tmp;	
         int count0;		
-		//-------------------------------------------
 
         VisitedListPool *visited_list_pool_;
         std::mutex cur_element_count_guard_;
